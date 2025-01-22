@@ -1,0 +1,113 @@
+/* Style du body */
+body {
+  background-image: url('/background.png');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* Centrer horizontalement */
+  align-items: center; /* Centrer verticalement */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Conteneur du contenu principal */
+.container {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Style du titre */
+h1 {
+  color: #f5f5dc; /* Couleur crème */
+  font-family: 'Arial', sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+/* Style du formulaire */
+form {
+  margin-top: 20px;
+  color: white;
+}
+
+/* Style de l'input */
+input[type="url"] {
+  padding: 12px 20px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 400px;
+  margin: 10px 0;
+  margin-right: 25px;
+  border: 2px solid #f5f5dc; /* Bordure crème */
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.8); /* Fond clair pour l'input */
+  color: #333; /* Texte sombre pour la saisie */
+  outline: none;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Changer la couleur de bordure au focus */
+input[type="url"]:focus {
+  border-color: #f5deb3; /* Teinte crème plus chaude */
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* Style du bouton */
+button {
+  padding: 10px 20px;
+  background-color: #f5f5dc; /* Fond crème */
+  border: none;
+  border-radius: 5px;
+  color: black; /* Texte noir */
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #f5deb3; /* Teinte crème plus chaude au survol */
+}
+
+/* Style du conteneur pour les shortlinks */
+h2 {
+  color: white;
+  margin-top: 30px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+  color: white;
+}
+
+a {
+  color: #f5f5dc; /* Couleur crème pour les liens */
+  text-decoration: none; /* Enlever le soulignement par défaut */
+  font-weight: bold; /* Mettre le texte en gras */
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+  color: #333; /* Couleur foncée au survol */
+  text-decoration: underline; /* Ajouter un soulignement au survol */
+}
+
+a:active {
+  color: #a1a1a1; /* Couleur légèrement plus claire lors du clic */
+}
+
+p {
+  color: white;
+}

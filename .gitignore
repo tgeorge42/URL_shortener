@@ -1,0 +1,47 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.db
+*.sqlite3
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.swp
+
+# Environnement virtuel
+venv/
+env/
+.venv/
+.env/
+
+# Fichiers de configuration IDE
+.idea/
+.vscode/
+
+# Fichiers de configuration système
+.DS_Store
+Thumbs.db
+
+# Fichiers de build frontend
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+
+# Fichiers de configuration pour le client
+frontend/.env
+frontend/.env.local
+frontend/.env.production
+frontend/.env.development
+
+# Caches de développement React
+frontend/.next/
+
+# Dossier du cache npm
+frontend/package-lock.json
+
+# Django migrations (optionnel, si tu veux gérer les migrations avec git)
+migrations/
