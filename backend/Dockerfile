@@ -1,21 +1,24 @@
-# Utiliser une image Python officielle
 FROM python:3.10-slim
 
-# Définir le répertoire de travail dans le conteneur
 WORKDIR /app
 
-# Copier les fichiers nécessaires pour installer les dépendances
+# Copy the file for the dependencies
 COPY requirements.txt ./
 
-# Installer les dépendances Python
+
+# Make sure the script to migrate the db and launch the project is executable
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+# Install Python dependencies
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
-# Copier le reste des fichiers dans le conteneur
+# Copy the rest of the files in the container
 COPY . ./
 
-# Exposer le port de l'application
+# Expose the app port
 EXPOSE 8000
 
-# Commande pour lancer l'application
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Launch the script
+ENTRYPOINT ["/entrypoint.sh"]
