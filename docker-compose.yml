@@ -6,7 +6,6 @@ services:
     build:
       context: ./backend
     volumes:
-      - ./backend:/app
       - ./backend/db:/app/db  # Le répertoire de la base de données SQLite
     ports:
       - "8000:8000"
@@ -20,8 +19,6 @@ services:
     container_name: frontend
     build:
       context: ./frontend
-    volumes:
-      - ./frontend:/app
     ports:
       - "5173:5173"
     command: /bin/bash -c "npm install && npm run dev"

@@ -3,5 +3,6 @@ uvicorn
 sqlalchemy
 alembic
 pytest
+httpx
 requests
 beautifulsoup4

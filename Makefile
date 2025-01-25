@@ -5,7 +5,7 @@ CONTAINER_NAME_FRONTEND = save_frontend_1
 DB_PATH = backend/db.sqlite3
 
 # Default target
-.PHONY: all build up down logs clean
+.PHONY: all build up down logs clean test
 
 all: build up
 
@@ -43,3 +43,6 @@ start: up migrate
 
 # Arrêter et nettoyer le projet
 stop: down clean
+
+test:
+	docker-compose exec backend pytest app/tests/ --verbose
