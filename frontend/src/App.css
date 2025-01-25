@@ -8,17 +8,28 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center; /* Centrer horizontalement */
-  align-items: center; /* Centrer verticalement */
+  align-items: flex-start; /* Alignement vertical au début */
   font-family: 'Arial', sans-serif;
+  overflow: hidden; /* Empêche tout défilement global */
+  padding: 10px 0;
 }
 
-/* Conteneur du contenu principal */
+/* Conteneur principal */
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   text-align: center;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 30px;
+  background: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+  max-height: calc(100vh - 100px); /* Limite la hauteur avec une marge de 20px en haut et en bas */
+  overflow-y: hidden; /* Active uniquement le défilement vertical interne */
+  overflow-x: hidden; /* Désactive complètement le défilement horizontal */
+  width: 100%; /* Le conteneur occupe toute la largeur possible */
+  max-width: 800px; /* Largeur maximale du conteneur */
+  box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
+  padding: 20px;
 }
 
 /* Style du titre */
@@ -29,12 +40,10 @@ h1 {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-bottom: 20px;
 }
 
 /* Style du formulaire */
 form {
-  margin-top: 20px;
   color: white;
 }
 
@@ -43,7 +52,7 @@ input[type="url"] {
   padding: 12px 20px;
   font-size: 1rem;
   width: 100%;
-  max-width: 400px;
+  max-width: 90%;
   margin: 10px 0;
   margin-right: 25px;
   border: 2px solid #f5f5dc; /* Bordure crème */
@@ -72,6 +81,17 @@ button {
   transition: background-color 0.3s ease;
 }
 
+/* Style du short URL */
+.short-url {
+  margin-left: 30px; /* Espacement entre le bouton et le short URL */
+  color: #f5f5dc;
+  font-weight: bold;
+  font-size: 1.1rem;
+  white-space: nowrap; /* Empêche le texte de se couper */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Affiche des points de suspension si le texte est trop long */
+}
+
 button:hover {
   background-color: #f5deb3; /* Teinte crème plus chaude au survol */
 }
@@ -79,7 +99,7 @@ button:hover {
 /* Style du conteneur pour les shortlinks */
 h2 {
   color: white;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 ul {
@@ -87,27 +107,57 @@ ul {
   padding: 0;
 }
 
+ul.scrollable-list {
+  flex: 1; /* Permet à la liste de prendre tout l'espace vertical restant */
+  max-height: 120px; /* Hauteur maximale ajustée */
+  overflow-y: auto; /* Active le défilement vertical */
+  margin-bottom: 10px; /* Ajoute de l'espace avant le bouton */
+  padding-right: 10px; /* Évite que le contenu touche la barre de défilement */
+}
+
 li {
+  display: flex;
+  justify-content: space-between; /* Aligne le titre à gauche et le lien à droite */
+  align-items: center; /* Centre verticalement les éléments */
   margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Ajoute une bordure légère */
+  border-radius: 5px; /* Arrondit les bords */
+  background-color: rgba(255, 255, 255, 0.1); /* Fond légèrement transparent */
   color: white;
+  word-wrap: break-word;
 }
 
-a {
-  color: #f5f5dc; /* Couleur crème pour les liens */
-  text-decoration: none; /* Enlever le soulignement par défaut */
-  font-weight: bold; /* Mettre le texte en gras */
-  transition: color 0.3s ease, text-decoration 0.3s ease;
+/* Style du titre */
+li strong {
+  max-width: 60%; /* Le titre occupe au maximum 60% de l'espace */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Ajoute des points de suspension si le texte dépasse */
+  white-space: nowrap; /* Empêche la coupure sur plusieurs lignes */
 }
 
-a:hover {
-  color: #333; /* Couleur foncée au survol */
-  text-decoration: underline; /* Ajouter un soulignement au survol */
+/* Style des liens */
+li a {
+  max-width: 35%; /* Le lien occupe au maximum 35% de l'espace */
+  text-align: right;
+  color: #f5f5dc;
+  text-decoration: none;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-a:active {
+li a:hover {
+  text-decoration: underline; /* Ajoute un soulignement au survol */
+  color: #f5deb3;
+}
+
+li a:active {
   color: #a1a1a1; /* Couleur légèrement plus claire lors du clic */
 }
 
 p {
   color: white;
+  margin: 10px 0 0;
 }

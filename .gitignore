@@ -43,5 +43,6 @@ frontend/.next/
 # Dossier du cache npm
 frontend/package-lock.json
 
-# Django migrations (optionnel, si tu veux gérer les migrations avec git)
-migrations/
+# Alembic (SQLAlchemy migrations)
+backend/alembic/versions/
+backend/alembic/__pycache__/

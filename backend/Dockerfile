@@ -1,24 +1,23 @@
-FROM python:3.10-slim
+# Dockerfile pour le backend FastAPI avec SQLite
 
+# Utilisez une image Python officielle
+FROM python:3.9-slim
+
+# Définir le répertoire de travail
 WORKDIR /app
 
-# Copy the file for the dependencies
-COPY requirements.txt ./
+# Copier les fichiers nécessaires
+COPY requirements.txt /app/
+COPY . /app/
 
+# Installer les dépendances Python
+RUN apt-get update
+RUN apt-get install sqlite3
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Make sure the script to migrate the db and launch the project is executable
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-
-# Install Python dependencies
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
-
-# Copy the rest of the files in the container
-COPY . ./
-
-# Expose the app port
+# Exposer le port 8000 pour l'application FastAPI
 EXPOSE 8000
 
-# Launch the script
-ENTRYPOINT ["/entrypoint.sh"]
+# Ajouter une étape pour exécuter les migrations avant de démarrer le serveur
+CMD ["sh", "-c", "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000"]

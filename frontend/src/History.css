@@ -1,0 +1,103 @@
+/* Style du body */
+body {
+    background-image: url('/background.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    font-family: 'Arial', sans-serif;
+}
+  
+/* Conteneur du contenu principal */
+.container {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7); /* Assombrir légèrement pour l'historique */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    max-width: 800px; /* Limiter la largeur du conteneur */
+    width: 100%; /* S'assurer que le conteneur est responsive */
+}
+
+/* Style du titre */
+h1 {
+    color: #f5f5dc; /* Couleur crème */
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5rem; /* Taille de police légèrement plus petite */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* Style du lien pour revenir à l'accueil */
+p a {
+    color: #f5f5dc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+p a:hover {
+    color: #f5deb3; /* Teinte plus chaude au survol */
+    text-decoration: underline;
+}
+
+/* Style du conteneur pour la liste des shortlinks */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.scrollable-history {
+    flex: 1; /* Permet à la liste de prendre tout l'espace vertical restant */
+    max-height: 80%; /* Hauteur maximale ajustée */
+    overflow-y: auto; /* Active le défilement vertical */
+    margin-bottom: 10px; /* Ajoute de l'espace avant le bouton */
+    padding-right: 10px; /* Évite que le contenu touche la barre de défilement */
+  }
+
+li {
+    margin-bottom: 15px;
+    color: white;
+    font-size: 1.1rem;
+    background-color: rgba(0, 0, 0, 0.6); /* Fond légèrement plus sombre pour les items */
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    word-wrap: break-word;
+}
+
+strong {
+    display: inline-block;
+    max-width: 200px; /* Largeur maximale du titre */
+    overflow: hidden; /* Masque le texte qui dépasse */
+    text-overflow: ellipsis; /* Ajoute les trois points à la fin du texte tronqué */
+    white-space: nowrap; /* Empêche le texte de se décomposer sur plusieurs lignes */
+}
+  
+li:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Changer la couleur de fond au survol */
+}
+
+/* Style des liens dans la liste */
+a {
+    color: #f5f5dc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #a1a1a1; /* Couleur légèrement plus claire lors du clic */
+}

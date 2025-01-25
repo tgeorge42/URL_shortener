@@ -1,5 +1,5 @@
 # Étape 1 : Construire le frontend
-FROM node:18 as build
+FROM node:20 as build
 
 WORKDIR /app
 
@@ -10,7 +10,7 @@ RUN npm install
 COPY . .
 
 # Étape 2 : Démarrer l'application frontend
-FROM node:18
+FROM node:20
 
 WORKDIR /app
 
