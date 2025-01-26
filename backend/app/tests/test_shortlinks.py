@@ -4,8 +4,8 @@ from app.main import app
 from fastapi.testclient import TestClient
 import os
 import pytest
-from backend.app.database.database import SessionLocal
-from backend.app.models.models import ShortenedURL
+from app.database.database import SessionLocal
+from app.models.models import ShortenedURL
 
 client = TestClient(app)
 
