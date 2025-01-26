@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { fetchOriginalUrl } from './services/api';
+import { fetchOriginalUrl } from '../services/api';
 
 function RedirectPage() {
   const { shortCode } = useParams();

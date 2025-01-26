@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from . import models
+from ..models import models
 import random, string
 
 def create_shortened_url(db: Session, url: str) -> models.ShortenedURL:

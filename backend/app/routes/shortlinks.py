@@ -1,9 +1,10 @@
 # /app/routes/shortlinks.py
 from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.orm import Session
-from .. import crud, schemas, database
-from ..models import ShortenedURL
-from ..schemas import ShortenedURLCreate, ShortenedURLResponse
+
+from ..database import database
+from ..models.models import ShortenedURL
+from ..schemas.schemas import ShortenedURLCreate, ShortenedURLResponse
 import requests
 from bs4 import BeautifulSoup
 import random

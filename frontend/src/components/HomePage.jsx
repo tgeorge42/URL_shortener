@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { createShortUrl, fetchAllShortUrls } from './services/api.jsx';
-import './App.css';
+import { createShortUrl, fetchAllShortUrls } from '../services/api.jsx';
+import '../styles/App.css';
 
 function HomePage() {
   const [url, setUrl] = useState('');

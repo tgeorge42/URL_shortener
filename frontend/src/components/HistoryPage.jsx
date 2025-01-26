@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { fetchAllShortUrls } from './services/api.jsx';
-import './History.css';
+import { fetchAllShortUrls } from '../services/api.jsx';
+import '../styles/History.css';
 
 function HistoryPage() {
   const [shortUrls, setShortUrls] = useState([]);
