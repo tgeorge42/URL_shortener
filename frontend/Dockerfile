@@ -1,4 +1,4 @@
-# Étape 1 : Construire le frontend
+# Frontend build
 FROM node:20 as build
 
 WORKDIR /app
@@ -9,7 +9,7 @@ RUN npm install
 
 COPY . .
 
-# Étape 2 : Démarrer l'application frontend
+# Start the frontend
 FROM node:20
 
 WORKDIR /app

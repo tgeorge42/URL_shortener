@@ -16,7 +16,7 @@ function HistoryPage() {
         {shortUrls.map(({ original_url, short_code, title }) => (
           <li key={short_code}>
           <strong>{title || 'No Title'}</strong>
-          <a href={`http://127.0.0.1:8000/go/${short_code}`}>{short_code}</a>
+          <a href={`http://127.0.0.1:5173/go/${short_code}`}>{short_code}</a>
         </li>
         ))}
       </ul>

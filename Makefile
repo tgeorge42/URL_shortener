@@ -2,7 +2,7 @@
 DOCKER_COMPOSE = docker-compose
 CONTAINER_NAME_BACKEND = save_backend_1
 CONTAINER_NAME_FRONTEND = save_frontend_1
-DB_PATH = backend/db.sqlite3
+DB_PATH = backend/db/mydatabase.db
 
 # Default target
 .PHONY: all build up down logs clean test
@@ -29,7 +29,7 @@ logs:
 clean:
 	$(DOCKER_COMPOSE) down --volumes --remove-orphans
 
-# Créer la base de données et appliquer les migrations
+# Create the db and migrate
 migrate:
 	@if [ ! -f $(DB_PATH) ]; then \
 		echo "La base de données n'existe pas, création de la base..."; \
@@ -38,11 +38,12 @@ migrate:
 		echo "La base de données existe déjà, pas besoin de la créer."; \
 	fi
 
-# Démarrer le projet avec la création de la base et les migrations
+# Start the project
 start: up migrate
 
-# Arrêter et nettoyer le projet
+# Stop the project
 stop: down clean
 
+# Launch the backend tests
 test:
 	docker-compose exec backend pytest app/tests/ --verbose

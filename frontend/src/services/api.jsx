@@ -1,5 +1,6 @@
 const apiUrl = 'http://127.0.0.1:8000/api/';
 
+// API call to shorten an URL
 export async function createShortUrl(originalUrl) {
   const response = await fetch(`${apiUrl}shorten/`, {
     method: 'POST',
@@ -7,7 +8,7 @@ export async function createShortUrl(originalUrl) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      original_url: originalUrl,  // Assurez-vous que c'est bien "original_url"
+      original_url: originalUrl,
     }),
   });
 
@@ -18,19 +19,21 @@ export async function createShortUrl(originalUrl) {
   return await response.json();
 }
 
+// API call to get all data
 export const fetchAllShortUrls = async () => {
   const response = await fetch(`${apiUrl}list/`);
   const data = await response.json();
   return data;
 };
 
+// API call to get the original URL based on a short URL
 export const fetchOriginalUrl = async (shortCode) => {
-  const response = await fetch(`${apiUrl}urls/${shortCode}/`);  // Assurez-vous que l'URL est correcte
+  const response = await fetch(`${apiUrl}urls/${shortCode}/`);
 
   if (!response.ok) {
     throw new Error(`Failed to fetch original URL for shortCode: ${shortCode}`);
   }
 
   const data = await response.json();
-  return data.original_url; // Assurez-vous que le backend renvoie { "original_url": "<URL d'origine>" }
+  return data.original_url;
 };

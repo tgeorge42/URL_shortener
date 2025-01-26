@@ -1,4 +1,3 @@
-/* Style du body */
 body {
   background-image: url('/background.png');
   background-size: cover;
@@ -7,14 +6,13 @@ body {
   margin: 0;
   height: 100vh;
   display: flex;
-  justify-content: center; /* Centrer horizontalement */
-  align-items: flex-start; /* Alignement vertical au début */
+  justify-content: center;
+  align-items: flex-start;
   font-family: 'Arial', sans-serif;
-  overflow: hidden; /* Empêche tout défilement global */
+  overflow: hidden;
   padding: 10px 0;
 }
 
-/* Conteneur principal */
 .container {
   display: flex;
   flex-direction: column;
@@ -23,18 +21,17 @@ body {
   background: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
-  max-height: calc(100vh - 100px); /* Limite la hauteur avec une marge de 20px en haut et en bas */
-  overflow-y: hidden; /* Active uniquement le défilement vertical interne */
-  overflow-x: hidden; /* Désactive complètement le défilement horizontal */
-  width: 100%; /* Le conteneur occupe toute la largeur possible */
-  max-width: 800px; /* Largeur maximale du conteneur */
-  box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
+  max-height: calc(100vh - 100px);
+  overflow-y: hidden;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 800px;
+  box-sizing: border-box;
   padding: 20px;
 }
 
-/* Style du titre */
 h1 {
-  color: #f5f5dc; /* Couleur crème */
+  color: #f5f5dc;
   font-family: 'Arial', sans-serif;
   font-size: 3rem;
   font-weight: bold;
@@ -42,12 +39,10 @@ h1 {
   letter-spacing: 2px;
 }
 
-/* Style du formulaire */
 form {
   color: white;
 }
 
-/* Style de l'input */
 input[type="url"] {
   padding: 12px 20px;
   font-size: 1rem;
@@ -55,48 +50,44 @@ input[type="url"] {
   max-width: 90%;
   margin: 10px 0;
   margin-right: 25px;
-  border: 2px solid #f5f5dc; /* Bordure crème */
+  border: 2px solid #f5f5dc;
   border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.8); /* Fond clair pour l'input */
-  color: #333; /* Texte sombre pour la saisie */
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
   outline: none;
   transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
-/* Changer la couleur de bordure au focus */
 input[type="url"]:focus {
-  border-color: #f5deb3; /* Teinte crème plus chaude */
+  border-color: #f5deb3;
   background-color: rgba(255, 255, 255, 1);
 }
 
-/* Style du bouton */
 button {
   padding: 10px 20px;
-  background-color: #f5f5dc; /* Fond crème */
+  background-color: #f5f5dc;
   border: none;
   border-radius: 5px;
-  color: black; /* Texte noir */
+  color: black;
   cursor: pointer;
   font-size: 1.2rem;
   transition: background-color 0.3s ease;
 }
 
-/* Style du short URL */
 .short-url {
-  margin-left: 30px; /* Espacement entre le bouton et le short URL */
+  margin-left: 30px;
   color: #f5f5dc;
   font-weight: bold;
   font-size: 1.1rem;
-  white-space: nowrap; /* Empêche le texte de se couper */
+  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; /* Affiche des points de suspension si le texte est trop long */
+  text-overflow: ellipsis;
 }
 
 button:hover {
-  background-color: #f5deb3; /* Teinte crème plus chaude au survol */
+  background-color: #f5deb3;
 }
 
-/* Style du conteneur pour les shortlinks */
 h2 {
   color: white;
   margin-top: 10px;
@@ -108,37 +99,35 @@ ul {
 }
 
 ul.scrollable-list {
-  flex: 1; /* Permet à la liste de prendre tout l'espace vertical restant */
-  max-height: 120px; /* Hauteur maximale ajustée */
-  overflow-y: auto; /* Active le défilement vertical */
-  margin-bottom: 10px; /* Ajoute de l'espace avant le bouton */
-  padding-right: 10px; /* Évite que le contenu touche la barre de défilement */
+  flex: 1;
+  max-height: 120px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  padding-right: 10px;
 }
 
 li {
   display: flex;
-  justify-content: space-between; /* Aligne le titre à gauche et le lien à droite */
-  align-items: center; /* Centre verticalement les éléments */
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 10px;
   padding: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Ajoute une bordure légère */
-  border-radius: 5px; /* Arrondit les bords */
-  background-color: rgba(255, 255, 255, 0.1); /* Fond légèrement transparent */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
   color: white;
   word-wrap: break-word;
 }
 
-/* Style du titre */
 li strong {
-  max-width: 60%; /* Le titre occupe au maximum 60% de l'espace */
+  max-width: 60%;
   overflow: hidden;
-  text-overflow: ellipsis; /* Ajoute des points de suspension si le texte dépasse */
-  white-space: nowrap; /* Empêche la coupure sur plusieurs lignes */
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-/* Style des liens */
 li a {
-  max-width: 35%; /* Le lien occupe au maximum 35% de l'espace */
+  max-width: 35%;
   text-align: right;
   color: #f5f5dc;
   text-decoration: none;
@@ -149,12 +138,12 @@ li a {
 }
 
 li a:hover {
-  text-decoration: underline; /* Ajoute un soulignement au survol */
+  text-decoration: underline;
   color: #f5deb3;
 }
 
 li a:active {
-  color: #a1a1a1; /* Couleur légèrement plus claire lors du clic */
+  color: #a1a1a1;
 }
 
 p {

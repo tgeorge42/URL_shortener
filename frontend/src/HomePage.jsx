@@ -32,17 +32,17 @@ function HomePage() {
             <button type="submit">Shorten</button>
             {shortUrl && (
                 <span className="short-url">
-                Short URL: <a href={`http://127.0.0.1:8000/go/${shortUrl}`}>{shortUrl}</a>
+                Short URL: <a href={`http://127.0.0.1:5173/go/${shortUrl}`}>{shortUrl}</a>
                  </span>
             )}
         </form>
-        <div style={{ flex: 1, overflow: 'hidden' }}> {/* Conteneur flexible pour la liste */}
+        <div style={{ flex: 1, overflow: 'hidden' }}>
             <h2>Recent Shortlinks</h2>
             <ul className="scrollable-list">
             {shortUrls.slice(0, 5).map(({ original_url, short_code, title, id }) => (
                 <li key={id}>
                 <strong>{title || 'No Title'}</strong>
-                <a href={`http://127.0.0.1:8000/go/${short_code}`}>{short_code}</a>
+                <a href={`http://127.0.0.1:5173/go/${short_code}`}>{short_code}</a>
                 </li>
             ))}
             </ul>

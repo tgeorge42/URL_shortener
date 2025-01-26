@@ -6,14 +6,14 @@ services:
     build:
       context: ./backend
     volumes:
-      - ./backend/db:/app/db  # Le répertoire de la base de données SQLite
+      - ./backend/db:/app/db
     ports:
       - "8000:8000"
     command: /bin/bash -c "pip install -r /app/requirements.txt && uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
     networks:
       - my_network
     environment:
-      - PYTHONPATH=/app  # Point vers le dossier backend
+      - PYTHONPATH=/app
   
   frontend:
     container_name: frontend
@@ -27,7 +27,7 @@ services:
 
 volumes:
   db-data:
-    driver: local  # Ce volume est utile pour persister le fichier SQLite
+    driver: local
 
 networks:
   my_network:

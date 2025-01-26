@@ -8,4 +8,4 @@ class ShortenedURL(Base):
     id = Column(Integer, primary_key=True, index=True)
     original_url = Column(String, unique=True, index=True)
     short_code = Column(String, unique=True, index=True)
-    title = Column(String)  # Ajouter un titre pour chaque URL raccourcie
+    title = Column(String)

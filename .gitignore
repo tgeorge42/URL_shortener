@@ -12,35 +12,27 @@ __pycache__/
 *.pyd
 *.swp
 
-# Environnement virtuel
+# Virtual environnement
 venv/
 env/
 .venv/
 .env/
 
-# Fichiers de configuration IDE
+# Conf files
 .idea/
 .vscode/
-
-# Fichiers de configuration système
 .DS_Store
 Thumbs.db
 
-# Fichiers de build frontend
+# Frontend build files
 frontend/node_modules/
 frontend/dist/
 frontend/build/
 
-# Fichiers de configuration pour le client
-frontend/.env
-frontend/.env.local
-frontend/.env.production
-frontend/.env.development
-
-# Caches de développement React
+# React cache
 frontend/.next/
 
-# Dossier du cache npm
+# NPM cache
 frontend/package-lock.json
 
 # Alembic (SQLAlchemy migrations)

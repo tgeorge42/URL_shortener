@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { fetchOriginalUrl } from './services/api'; // Assure-toi que cette fonction existe et fonctionne correctement
+import { fetchOriginalUrl } from './services/api';
 
 function RedirectPage() {
   const { shortCode } = useParams();
@@ -11,21 +11,20 @@ function RedirectPage() {
       try {
         const originalUrl = await fetchOriginalUrl(shortCode);
         if (originalUrl) {
-          window.location.href = originalUrl; // Redirige vers l'URL d'origine
+          window.location.href = originalUrl;
         } else {
-          // Si l'URL est introuvable, redirige vers la page NotFound
-          navigate('/notfound');
+            navigate('/notfound');
         }
       } catch (error) {
-        console.error('Failed to fetch the original URL:', error);
-        navigate('/notfound'); // En cas d'erreur, redirige vers la page NotFound
+          console.error('Failed to fetch the original URL:', error);
+          navigate('/notfound');
       }
     };
 
     handleRedirect();
-  }, [shortCode, navigate]); // Ajout de navigate comme dépendance
+  }, [shortCode, navigate]);
 
-  return <p>Redirecting...</p>; // Vous pouvez personnaliser le message ou ajouter un spinner
+  return <p>Redirecting...</p>;
 }
 
 export default RedirectPage;
